@@ -1,0 +1,37 @@
+// a)
+
+public static int arraySum(int[] arr)
+{
+  int sum = 0;
+  for(int x : arr)
+    sum += x;
+
+  return sum;
+}
+
+
+// b)
+
+public static int[] rowSums(int[][] arr2D)
+{
+  int[] sums = new int[arr2D.length];
+  for(int x = 0; x < sums.length; x++)
+    sums[i] = arraySum(arr2D[x]);
+
+  return sums;
+}
+
+
+// c)
+
+public static boolean isDiverse(int[][] arr2D)
+{
+  int[] sums = rowSums(arr2D);
+  
+  for(int i = 0; i < sums.length; i++)
+    for(int x = i + 1; x < sums.length; x++)
+      if(sums[x] == sums[i])
+        return false;
+  
+  return true;
+}

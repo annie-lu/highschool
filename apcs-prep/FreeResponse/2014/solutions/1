@@ -1,0 +1,28 @@
+//a
+
+public static String scrambleWord(String word)
+{
+  for(int x = 1; x < word.length(); x++)
+    if(!"A".equals(word.substring(x, x+1)) && "A".equals(word.substring(x-1, x)))
+    {
+      word = word.substring(0, x-1) + word.substring(x, x+1) + word.substring(x-1, x) + word.substring(x+1);
+      x++;
+    }
+    
+    return word;
+}
+
+
+//b
+
+public static void scrambleOrRemove(List<String> wordList)
+{
+  for(int x = wordList.size() - x; x >= 0; x--)
+  {
+    String scramble = scrambleWord(wordList.get(x));
+    if(scramble.equals(wordList.get(x)))
+      wordList.remove(x);
+    else
+      wordList.set(x, scramble);
+  }
+}

@@ -1,0 +1,26 @@
+//a
+ 
+ public DownloadInfo getDownloadInfo(String title)
+    {
+        for(DownloadInfo information : downloadList)
+            if(title.equals(information.getTitle()))
+                return information;
+        
+        return null;
+    }
+    
+    
+//b
+
+public void updateDownloads(List<String> titles)
+    {
+        for(String title : titles)
+        {
+            DownloadInfo information = getDownloadInfo(title);
+            
+            if(information != null)
+                info.incrementTimesDownloaded();
+            else
+                downloadList.add(new DownloadInfo(title));
+        }
+    }

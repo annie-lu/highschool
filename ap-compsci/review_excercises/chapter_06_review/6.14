@@ -1,0 +1,4 @@
+you can't run a method on null
+so when the code runs
+a null pointer exception will occur
+??

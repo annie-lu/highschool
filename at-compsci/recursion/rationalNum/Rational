@@ -1,0 +1,91 @@
+package rationalNum;
+
+public class Rational {
+	private int num,den;
+
+	public Rational(int num, int den) {
+		if (den==0)
+		{
+			throw new IllegalArgumentException();
+			
+		}
+		else {
+			this.num = num;
+			this.den = den;
+			reduce();
+		}
+		
+
+	}
+
+	public int getNumerator() {
+		return num;
+	}
+
+	public int getDenominator() {
+		return den;
+	}
+
+	public Rational getReciprocal()
+	{
+		return new Rational(den,num);
+	}
+	public Rational add(Rational a)
+	{
+		return subtract(new Rational(-a.getNumerator(),a.getDenominator()));
+	}
+	public Rational subtract(Rational a)
+	{
+		Rational p = (new Rational (num*a.getDenominator()-den*a.getNumerator(), den*a.getDenominator()));
+		p.reduce();
+		return p;
+		
+	}
+	public Rational multiply(Rational a)
+	{
+		Rational p = (new Rational (num*a.getNumerator(),den*a.getDenominator()));
+		p.reduce();
+		return p;
+	}
+	public Rational divide(Rational a)
+	{
+		return multiply (a.getReciprocal());
+	}
+	private void reduce()
+	{
+		int gcd= gcd(num,den);
+		num/=gcd;
+		den/=gcd;
+		
+		if (den<0)
+		{
+				num= -num;
+				den*= -1;
+		}
+			
+	}
+	
+	private int gcd(int a, int b) 
+	{
+	     if(b == 0)
+	    	 return a;
+	     return gcd(b, a%b);         
+	}
+	
+	public boolean equals(Object a)
+	{
+		Rational d = (Rational) a;
+		return num== d.getNumerator() && den==d.getDenominator();
+	}
+	public int compareTo(Object a)
+	{
+		Rational d = (Rational) a;
+		int x = subtract(d).getNumerator();
+		return x;
+	}
+	public String toString()
+	{
+		return num+"/"+den;
+	}
+	
+}

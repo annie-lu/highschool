@@ -1,0 +1,82 @@
+R13.2
+Constructor: SavingsAccount(double rate) {}
+Methods Inherited: deposit, withdraw
+Methods: addInterest();
+
+R13.4
+superclass, subclass
+a. employee, manager
+b. polygon, triangle
+c. student, graduate student
+d. person, student
+e. needs more information
+f. bank account, checking account
+g. vehicle, car
+h. vehicle, minivan
+i. car, minivan
+j. vehicle, truck
+
+R13.7
+Vehicle > 
+				Bicycle > Motorcycle
+				Car >
+						Truck > PickupTruck
+						SportUtilityVehicle
+						Sedan
+						Coupe
+						Minivan
+
+R13.1
+2750
+
+R13.3
+Yes.
+hippo=animal;
+No.
+superclass animal
+subclasses hedgehog, hippo
+if animal reference becomes hippo reference
+but the previous animal reference isn't always for a hippo then what :O
+
+R13.5
+yes
+no
+no
+yes
+
+R13.9
+a. no
+b. true
+c. false
+d. false
+e. true
+f. true
+g. true
+
+R13.10
+The keyword super can be used to call a superclass method instead of a subclass method with the same signature
+A superclass constructor can be called explicitly using the super keyword
+
+13.11
+2
+
+13.12
+late-binding
+
+13.13
+shallow copy: a new reference is made
+deep copy: a new copy is made
+
+13.14
+Instance and static fields should always be private. Static final fields can be public.
+
+13.15
+They should either be public or private. Avoid the use of package-visible methods. The same is true for static methods.
+
+13.16
+Yes it is possible. Create a class that extends from System.in or System.out and then
+create methods with the same method headers (and parameters) as the System.in/System.out class has.
+
+13.17
+public fields are dangerous because then the client class can directly change the instance field.
+static fields would be less dangerous since they aren't reliant on instances?

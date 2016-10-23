@@ -1,0 +1,49 @@
+9.1
+
+Class VendingMachine
+Class Transaction
+
+9.3
+
+Shipping class
+Store class
+Order class
+
+9.11 9.12
+String class is immutable
+Integer class is immutable
+
+9.15
+a.  x >= 0
+b.  n != 0
+c.  a != null
+d.  (day >= 1) && (day <= 7)
+
+9.17
+must be an int string in the parameter
+must not have run out of tokens
+lower < upper 
+m<n
+
+
+9.24
+package r9_24;
+
+public class PrintTester
+{
+    public void print(int x)
+    {
+        System.out.println(x);
+    }
+    
+    public static void main(String[] args)
+    {
+        int n = 13;
+        print(n);
+    }
+}
+
+9.25
+there is no need for an object
+it can just use the parameters to return whatever the user is asking for
+ex: getInteger decode compare

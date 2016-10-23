@@ -1,0 +1,23 @@
+for(int x=0; x<data.length;x++)
+			sum=sum+x;
+		
+for(int x=0; x<data.length;x++){
+		if (x==target)
+		return true;}
+		
+int i=0;
+for(int x=0; x<data.length;x++){
+		data[i]=2*x;
+		i++;
+		}
+		
+for(int i:data)
+sum=sum+data[i];
+
+int i=1;
+for(int i:data)
+sum=sum+data[i];
+
+for(int i:data){
+if (x==target)
+		return true;}

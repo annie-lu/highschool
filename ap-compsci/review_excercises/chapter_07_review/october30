@@ -1,0 +1,84 @@
+7.2 
+0000000000
+0123456789
+0246802468
+0369258147
+0482604826
+0505050505
+0628406284
+0741852963
+0864208642
+0987654321
+
+7.3
+a.10
+b.10
+c.10
+d.21
+e.forever
+f.10
+g.7
+
+7.4
+int s=0;
+while(i<=10){
+s+s+i;
+i++;
+}
+
+7.5
+int n=1;
+double x=0;
+double s=1.0;
+while(s>0.01){
+s=1.0/(n*n);
+x=x+s;
+n++;}
+
+7.7
+A "loop and a half" is when a loop breaks in the middle of running. 
+
+
+ while (true){
+        read name of bridge
+        if (not okay) 
+        break;
+        read length of bridge in feet;
+        if (not okay)
+        break;
+        convert length to meters;
+        print bridge data;}
+        
+  while (true){
+  read name of bridge
+        if (not okay) 
+        return error;
+        read length of bridge in feet;
+        if (not okay)
+        return error;
+        convert length to meters;
+        print bridge data;}
+  
+   while (!done){
+  read name of bridge
+        if (not okay) 
+        {done=false;
+        continue;}
+        read length of bridge in feet;
+        if (not okay)
+       {done=false;
+        continue;}
+        convert length to meters;
+        print bridge data;}
+  
+
+7.11
+It is a common programming error in which a value is one larger or smaller than it should be.
+I've made this mistake when using array indexes and array lengths.
+
+7.12
+symmetric: making a for loop loop a specific number of times (not a variable)
+asymmetric: making a for loop loop an array length
+
+a <= r && r <= b
+(int) (Math.random() * b + a)

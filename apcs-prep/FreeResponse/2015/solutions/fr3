@@ -1,0 +1,28 @@
+// a) 
+
+public int getValueAt(int r, int c)
+{
+  for(SparseArrayEntry entry : entries)
+    if(entry.getRow() == r && entry.getCol() == c)
+      return entry.getValue();
+
+  return 0;
+}
+
+
+//b) 
+
+public void removeColumn(int c)
+{
+  for(int x = entries.size() - 1; x >= 0; x--)
+  {
+    SparseArrayEntry entry = entries.get(x);
+    
+    if(c == entry.getCol())
+      entries.remove(x);
+    else if(c < entry.getCol())
+      entries.set(x, new SparseArrayEntry(entry.getRow(), entry.getCol() - 1, entry.getValue()));
+  }
+  
+  numCols--;
+}

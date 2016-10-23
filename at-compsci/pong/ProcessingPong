@@ -1,0 +1,115 @@
+int rad = 20;        // Width of the shape
+float xpos, ypos;    // Starting position of shape    
+float yposone, ypostwo; //Starting position of rectangle
+float xspeed = 5;  // Speed of the shape
+float yspeed = 2.2;  // Speed of the shape
+
+int xdirection = 1;  // Left or Right
+int ydirection = 1;  // Top to Bottom
+
+boolean isWPressed = false;
+boolean isSPressed = false;
+boolean isIPressed = false;
+boolean isKPressed = false;
+
+boolean playerOneLoses = false;
+boolean playerTwoLoses = false;
+
+void setup() 
+{
+  size(640, 360);
+  noStroke();
+  frameRate(30);
+  ellipseMode(RADIUS);
+  // Set the starting position of the shape
+  xpos = width/2;
+  ypos = height/2;
+}
+
+void draw() 
+{
+  background(102);
+  
+  // Update the position of the shape
+  xpos = xpos + ( xspeed * xdirection );
+  ypos = ypos + ( yspeed * ydirection );
+  
+  // Test to see if the shape exceeds the boundaries of the screen
+  // If it does, reverse its direction by multiplying by -1
+  if(!(playerOneLoses || playerTwoLoses)){
+    if (xpos > width-rad || xpos < rad) {
+    xdirection *= -1;
+  }
+  if (ypos > height-rad || ypos < rad) {
+    ydirection *= -1;
+  }
+  
+ keyPressed();
+   keyReleased();
+  if (yposone < height-70 && isSPressed){
+      yposone += 10;
+  }
+
+  if(yposone > 0 && isWPressed){
+      yposone -= 10;
+  }
+  
+
+  if (ypostwo < height-70 && isKPressed){
+      ypostwo +=10;
+  }
+  
+  if(ypostwo > 0 && isIPressed){
+      ypostwo -=10;
+  }
+  // Draw the shape
+  ellipse(xpos, ypos, rad, rad);
+  rect(0, yposone, 12, 70);
+  rect(628, ypostwo, 12, 70);
+  check();
+  }
+  else{
+    String s = "Player One ";
+    String y = "Player Two ";
+    if(playerOneLoses){
+      s+= "Lost";
+      y+= "Won";
+    }
+    else{
+       y+= "Lost";
+      s+= "Won";
+    }
+    textSize(20);
+fill(50);
+text(s, 10, 50);
+fill(50);
+text(y, 300, 50);
+  }
+  
+  
+}
+
+void keyPressed() {
+  if (char(keyCode) == 'W') isWPressed = true;
+  if (char(keyCode) == 'S') isSPressed = true;
+  if (char(keyCode) == 'I') isIPressed = true;
+  if (char(keyCode) == 'K') isKPressed = true;
+
+}
+void keyReleased() {
+  if (char(keyCode) == 'W') isWPressed = false;
+  if (char(keyCode) == 'S') isSPressed = false;
+  if (char(keyCode) == 'I') isIPressed = false;
+  if (char(keyCode) == 'K') isKPressed = false;
+}
+
+void check(){
+   if (xpos<rad && (ypos > yposone+70 || ypos < yposone)) {
+    playerOneLoses=true;
+   // noLoop;
+  }
+   if (xpos>width-rad && (ypos > ypostwo+70 || ypos < ypostwo)) {
+   playerTwoLoses = true;
+   // noLoop();
+  }
+}

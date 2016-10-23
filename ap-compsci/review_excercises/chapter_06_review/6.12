@@ -1,0 +1,2 @@
+The == operator will test whether the two string references. 
+The equals method will test whether the string objects have identical contents stored.

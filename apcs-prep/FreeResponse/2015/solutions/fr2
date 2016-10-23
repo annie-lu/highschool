@@ -1,0 +1,27 @@
+public class HiddenWord
+{
+  private String word;
+
+  public HiddenWord(String x)
+  {
+    word = x;
+  }
+  
+  public String getHint(String guess)
+  {
+    String hint = "";
+
+    for(int x = 0; x < word.length(); x++)
+    {
+      String letter = guess.substring(x, x + 1);
+      if(letter.equals(word.substring(x, x + 1)))
+        hint += letter;
+      else if(word.indexOf(letter) >= 0)
+        hint += "+";
+      else
+        hint += "*";
+    }
+    return hint;
+  }
+  
+}

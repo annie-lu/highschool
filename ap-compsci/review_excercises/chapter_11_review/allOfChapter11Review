@@ -1,0 +1,39 @@
+R11.1:
+a. cast
+b. no
+c. cast :)
+
+R11.2:
+a.
+b. throw exception? :1
+c.
+
+R11.3:
+a.
+b.
+c.
+d.no
+e.might throw exception (RUNTIME)
+f.must CAST
+g.
+h.no
+
+R11.4: you lose information when casting primitive types
+you risk the chance of cause an error when casting interface as a specific class
+
+R11.6:
+a.
+b.
+c.no
+d.no
+e.no
+f.yes??
+g.yes?
+
+R11.7: it is polymorphism because you are calling a method from the shape interface.
+The compiler does not know which implementation of that method (the object) until runtime.
+
+R11.8: early binding occurs during method overloading. 
+An example includes if two methods have the same name (but different parameters)
+idk.getRandom(10,20); 
+idk.getRandom(10);

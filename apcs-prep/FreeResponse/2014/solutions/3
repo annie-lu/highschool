@@ -1,0 +1,42 @@
+a)
+
+public SeatingChart(List<Student> studentList, int rows, int cols)
+{
+  int index = 0;
+
+  seats = new Student[rows][cols];
+
+  for(int c = 0; c < seats[0].length; c++)
+  {
+    for(int r = 0; r < seats.length; r++)
+    {
+      if(index < studentList.size())
+      {
+        seats[r][c] = studentList.get(index);
+        index++;
+      }
+    }
+  }
+}
+
+
+b)
+
+public int removeAbsentStudents(int allowedAbsences)
+{
+  int remove = 0;
+
+  for(int r = 0; r < seats.length; r++)
+  {
+    for(int c = 0; c < seats[0].length; c++)
+    {
+      if(seats[r][c] != null && seats[r][c].getAbsenceCount() > allowedAbsences)
+      {
+        seats[r][c] = null;
+        remove++;
+      }
+    }
+  }
+
+  return remove;
+}

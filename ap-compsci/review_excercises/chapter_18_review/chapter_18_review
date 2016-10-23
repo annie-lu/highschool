@@ -1,0 +1,5 @@
+18.2
+return the smaller value
+repeat method with array[x-1]
+base case array[0]
+you return the smaller value
